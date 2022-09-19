@@ -1,0 +1,29 @@
+@startuml
+
+!define BASEPATH ../global/style/components
+!include BASEPATH/awslib/AWSCommon.puml
+!include BASEPATH/awslib/AWSSimplified.puml
+!include BASEPATH/awslib/Compute/all.puml
+!include BASEPATH/awslib/mobile/all.puml
+!include BASEPATH/awslib/general/all.puml
+
+' !include <global/style/awslib/AWSCommon>
+' !include <global/style/awslib/AWSSimplified.puml>
+' !include <global/style/awslib/Compute/all.puml>
+' !include <global/style/awslib/mobile/all.puml>
+' !include <global/style/awslib/general/all.puml>
+
+' skinparam linetype polyline
+ skinparam linetype ortho
+
+EC2(Smadex, "Smadex Service", " ")
+Users(Users, "Users", " ")
+Traditionalserver(AdExchange, "Ad Exchange", " ")
+Mobile(Mobile, "Publisher app or web", " ")
+
+Users -down-> Mobile: 1. Visits
+Mobile -right-> AdExchange: 2. Start auction
+AdExchange -right-> Smadex: 3. Bid request / response
+Smadex -left-> Mobile: 4. Show Ad
+Users -right-> Smadex: 5. Impression / click / install / event {request id}
+@enduml

@@ -1,0 +1,8 @@
+
+!$openItemColor = "#FFAAAA"
+!$dataContractColor = "#AAFBFF"
+
+!if %not(%variable_exists("$participantColor"))
+  !$participantColor = "#E2E2F0"
+'   grey-blue
+!endif

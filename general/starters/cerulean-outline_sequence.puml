@@ -1,0 +1,21 @@
+@startuml
+!theme cerulean-outline
+!pragma teoz true
+
+skinparam maxMessageSize 400
+autonumber
+
+skinparam participant {
+	BackgroundColor #e9ecef
+	FontColor Navy
+}
+
+Participant Alice
+Participant Bob
+
+Alice -> Bob
+Alice <-- Bob
+Alice -> Bob: text
+note right of Alice: note
+
+@enduml
