@@ -1,0 +1,56 @@
+
+!if %not(%variable_exists("$BGCOLOR"))
+    !$BGCOLOR = "transparent"
+!endif
+
+skinparam backgroundColor $BGCOLOR
+skinparam useBetaStyle false
+
+''
+'' Colors taken from the css file of the BS theme
+''
+!$BLUE = "#033C73"
+!$INDIGO = "#6610F2"
+!$PURPLE = "#6F42C1"
+!$PINK = "#E83E8C"
+!$RED = "#C71C22"
+!$ORANGE = "#FD7E14"
+!$YELLOW = "#DD5600"
+!$GREEN = "#73A839"
+!$TEAL = "#20C997"
+!$CYAN = "#2FA4E7"
+!$WHITE = "#FFF"
+!$GRAY_DARK = "#343A40"
+!$GRAY = "#868E96"
+!$PRIMARY = "#Black"
+!$SECONDARY = "#White"
+!$SUCCESS = "#73A839"
+!$INFO = "#033C73"
+!$WARNING = "#DD5600"
+!$DANGER = "#C71C22"
+!$LIGHT = "#F8F9FA"
+!$DARK = "#343A40"
+
+'' *_LIGHT = tint (lighter) of the main color of 80%
+''          where TINT is calculated by clr + (255-clr) * tint_factor
+'' *_DARK = shade (darker) of the main color of 80%
+''          and SHADE is calculated by clr * (1 - shade_factor)
+''
+
+!$FGCOLOR = $DARK
+!$PRIMARY_LIGHT = "#Black"
+!$PRIMARY_DARK = "#Black"
+!$PRIMARY_TEXT = "#Black"
+!$SECONDARY_LIGHT = "#White"
+!$SECONDARY_DARK = "#White"
+!$SECONDARY_TEXT = $SECONDARY_DARK
+!$INFO_LIGHT = "#35638F"
+!$INFO_TEXT = $INFO
+!$SUCCESS_LIGHT = "#8FB961"
+!$SUCCESS_TEXT = $SUCCESS
+!$WARNING_LIGHT = "#E47833"
+!$WARNING_TEXT = $WARNING
+!$DANGER_LIGHT = "#D2494E"
+!$DANGER_TEXT = $WHITE
+!$ARROW = $PRIMARY_DARK
+!$participantColor = $SECONDARY

@@ -1,76 +1,4 @@
-''
-'' Cerulean theme based off of the bootstrap theme of the same name
-'' https://bootswatch.com/cerulean/
-''
-'' Author: Brett Schwarz
-'' Copyright (c) 2019 by Brett Schwarz
 
-' !$THEME = "cerulean-outline"
-
-!if %not(%variable_exists("$BGCOLOR"))
-' !$BGCOLOR = "transparent"
-!$BGCOLOR = "#ffffff90"
-!endif
-
-skinparam backgroundColor $BGCOLOR
-skinparam useBetaStyle false
-
-''
-'' Colors taken from the css file of the BS theme
-''
-!$BLUE = "#033C73"
-!$INDIGO = "#6610F2"
-!$PURPLE = "#6F42C1"
-!$PINK = "#E83E8C"
-!$RED = "#C71C22"
-!$ORANGE = "#FD7E14"
-!$YELLOW = "#DD5600"
-!$GREEN = "#73A839"
-!$TEAL = "#20C997"
-!$CYAN = "#2FA4E7"
-!$WHITE = "#FFF"
-!$GRAY_DARK = "#343A40"
-!$GRAY = "#868E96"
-!$PRIMARY = "#4881b3"
-' !$PRIMARY = "#2FA4E7"
-!$SECONDARY = "#f5fbff"
-' !$SECONDARY = "#E9ECEF"
-!$SUCCESS = "#73A839"
-!$INFO = "#033C73"
-!$WARNING = "#DD5600"
-!$DANGER = "#C71C22"
-!$LIGHT = "#F8F9FA"
-!$DARK = "#343A40"
-
-'' *_LIGHT = tint (lighter) of the main color of 80%
-''          where TINT is calculated by clr + (255-clr) * tint_factor
-'' *_DARK = shade (darker) of the main color of 80%
-''          and SHADE is calculated by clr * (1 - shade_factor)
-''
-
-!$FGCOLOR = $DARK
-!$PRIMARY_LIGHT = "#92b5d3"
-' !$PRIMARY_LIGHT = "#59B6EC"
-!$PRIMARY_DARK = "#224c72"
-' !$PRIMARY_DARK = "#2683B9"
-!$PRIMARY_TEXT = "#Black"
-' !$PRIMARY_TEXT = $PRIMARY
-!$SECONDARY_LIGHT = "#EDF0F2"
-!$SECONDARY_DARK = "#33adff"
-' !$SECONDARY_DARK = "#BABDBF"
-!$SECONDARY_TEXT = $SECONDARY_DARK
-!$INFO_LIGHT = "#35638F"
-!$INFO_TEXT = $INFO
-!$SUCCESS_LIGHT = "#8FB961"
-!$SUCCESS_TEXT = $SUCCESS
-!$WARNING_LIGHT = "#E47833"
-!$WARNING_TEXT = $WARNING
-!$DANGER_LIGHT = "#D2494E"
-!$DANGER_TEXT = $WHITE
-!$ARROW = $PRIMARY_DARK
-!$participantColor = $SECONDARY
-
-!$lightBlueTranspartent = "#add8e690"
 
 !procedure $success($msg)
   <font color=$SUCCESS><b>$msg
@@ -90,6 +18,8 @@ skinparam useBetaStyle false
 	BackgroundColor $SECONDARY
 	' BackgroundColor $BGCOLOR
 !endprocedure
+
+
 ''
 '' Style settings
 ''
@@ -119,7 +49,7 @@ skinparam useBetaStyle false
   }
   group {
 	LineThickness 2
-  }  
+  }
   groupHeader {
     BackgroundColor $SECONDARY
     FontColor $INFO
@@ -156,7 +86,7 @@ skinparam useBetaStyle false
   }
   nwdiagDiagram {
 	network {
-		$primary_scheme()    
+		$primary_scheme()
 		LineColor $PRIMARY
 		LineThickness 1.0
 		FontColor $PRIMARY_DARK
@@ -325,7 +255,7 @@ skinparam sequence {
 	''
 	DelayFontColor $DARK
 	''
-	
+
 	LifeLineBorderColor $PRIMARY
 	' LifeLineBorderColor $SECONDARY_DARK
 	SequenceLifeLineBorderThickness 4
@@ -480,8 +410,9 @@ skinparam database {
 
 skinparam class {
 	$primary_scheme()
-	FontColor $LIGHT
-	HeaderBackgroundColor $PRIMARY-$PRIMARY_DARK
+	FontColor $DARK
+	' HeaderBackgroundColor $PRIMARY_LIGHT
+	' HeaderBackgroundColor $PRIMARY-$PRIMARY_DARK
 	StereotypeFontColor $DARK
 	BorderThickness 1
 	AttributeFontColor $DARK
@@ -521,9 +452,11 @@ skinparam rectangle {
 !startsub package
 
 skinparam package {
+	' BackgroundColor transparent
 	BackgroundColor $BGCOLOR
   	BorderColor $PRIMARY
-	FontColor $PRIMARY
+	FontColor $DARK
+	' FontColor $PRIMARY
 	BorderThickness 2
 }
 !endsub
