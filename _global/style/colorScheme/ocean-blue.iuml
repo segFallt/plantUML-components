@@ -30,7 +30,7 @@ skinparam useBetaStyle false
 !$DANGER = "#C71C22"
 !$LIGHT = "#F8F9FA"
 !$DARK = "#343A40"
-!$BOXBACKGROUND = "#99999950"
+!$BOXBACKGROUND = "#92b5d350"
 
 '' *_LIGHT = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
