@@ -1,0 +1,18 @@
+@startuml
+
+!$GLOBAL_BASEPATH = ../../_global
+!include $GLOBAL_BASEPATH/style/theme/black-white-theme.iuml
+!include $GLOBAL_BASEPATH/functional/sequence/commonSequenceFunctions.iuml
+
+$setAutoNumber()
+$setMaxMessageSize(200)
+
+$addParticipant(Alice, "Alice")
+$addParticipant(Bob, "Bob")
+
+Alice -> Bob
+Alice <-- Bob
+Alice -> Bob: text
+note right of Alice: note
+
+@enduml
