@@ -10,8 +10,8 @@ $setMaxMessageSize(200)
 $addParticipant(Alice, "Alice")
 $addParticipant(Bob, "Bob")
 
-Alice -> Bob
-Alice <-- Bob
+Alice -> Bob ++
+Alice <-- Bob --
 Alice -> Bob: text
 note right of Alice: note
 

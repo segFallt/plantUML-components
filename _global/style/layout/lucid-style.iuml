@@ -252,9 +252,9 @@ skinparam sequence {
 	''
 	BoxBackgroundColor $BOXBACKGROUND
 	BoxBorderColor $GRAY
-	BoxFontColor $DARK
+	BoxFontColor $PRIMARY_TEXT
 	''
-	DelayFontColor $DARK
+	DelayFontColor $PRIMARY_TEXT
 	''
 
 	LifeLineBorderColor $PRIMARY
@@ -265,18 +265,18 @@ skinparam sequence {
 	' LifeLineBackgroundColor $BGCOLOR
 	''
 	GroupBorderColor $GRAY
-	GroupFontColor $DARK
+	GroupFontColor $PRIMARY_TEXT
 	GroupHeaderFontColor $INFO_TEXT
 	''
 	DividerBackgroundColor $SECONDARY
 	' DividerBackgroundColor $BGCOLOR
     DividerBorderColor $GRAY
     DividerBorderThickness 2
-    DividerFontColor $DARK
+    DividerFontColor $PRIMARY_TEXT
 	''
 	ReferenceBackgroundColor $BGCOLOR
 	ReferenceBorderColor $GRAY
-	ReferenceFontColor $DARK
+	ReferenceFontColor $PRIMARY_TEXT
 	ReferenceHeaderFontColor $INFO_TEXT
 	''
 	StereotypeFontColor $PRIMARY_TEXT
