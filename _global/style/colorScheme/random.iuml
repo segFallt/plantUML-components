@@ -1,15 +1,15 @@
 ''
 '' Colors taken from the css file of the BS theme
 ''
-!$PRIMARY = "#81B1DB"
-!$SECONDARY = "#474949"
-!$LIGHT = "#F8F9FA"
-!$DARK = "#1F2020"
+!$PRIMARY = %hsl_color(%random(1,359), %random(101), %random(101))
+!$SECONDARY = %hsl_color(%random(1,359), %random(101), %random(101))
+!$LIGHT = %hsl_color(%random(1,359), %random(101), %random(101))
+!$DARK = %hsl_color(%random(1,359), %random(101), %random(101))
 
-!$SUCCESS = "#73A839"
-!$INFO = "#White"
-!$WARNING = "#DD5600"
-!$DANGER = "#C71C22"
+!$SUCCESS = %hsl_color(%random(1,359), %random(101), %random(101))
+!$INFO = %hsl_color(%random(1,359), %random(101), %random(101))
+!$WARNING = %hsl_color(%random(1,359), %random(101), %random(101))
+!$DANGER = %hsl_color(%random(1,359), %random(101), %random(101))
 
 !$LIGHTEN_DARKEN_FACTOR = 20
 !$TRANSPARENCY_LEVEL = 90
@@ -19,11 +19,11 @@
 '' *_DARK = shade (darker) of the main color of 80%
 ''          and SHADE is calculated by clr * (1 - shade_factor)
 ''
-!$BACKGROUND = "#2A303C"
-!$FOREGROUND = "#1F2020"
+!$BACKGROUND = %hsl_color(%random(1,359), %random(101), %random(101))
+!$FOREGROUND = %hsl_color(%random(1,359), %random(101), %random(101))
 !$PRIMARY_LIGHT = %lighten($PRIMARY, $LIGHTEN_DARKEN_FACTOR)
 !$PRIMARY_DARK = %darken($PRIMARY, $LIGHTEN_DARKEN_FACTOR)
-!$PRIMARY_TEXT = "#White"
+!$PRIMARY_TEXT = $PRIMARY
 !$SECONDARY_LIGHT = %lighten($SECONDARY, $LIGHTEN_DARKEN_FACTOR)
 !$SECONDARY_DARK = %darken($SECONDARY, $LIGHTEN_DARKEN_FACTOR)
 !$SECONDARY_TEXT = $SECONDARY_DARK
@@ -35,9 +35,9 @@
 !$WARNING_TEXT = $WARNING
 !$DANGER_LIGHT = %lighten($DANGER, $LIGHTEN_DARKEN_FACTOR)
 !$DANGER_TEXT = $DANGER
-!$ARROW = "#White"
+!$ARROW = $PRIMARY_DARK
 !$BOX_BACKGROUND = $FOREGROUND
-!$PARTICIPANT_BACKGROUND = $FOREGROUND
+!$PARTICIPANT_BACKGROUND = $SECONDARY
 
 
 ' skinparam backgroundColor $BACKGROUND

@@ -15,8 +15,7 @@
 !procedure $primary_scheme()
 	FontColor $PRIMARY_TEXT
 	BorderColor $PRIMARY
-	BackgroundColor $SECONDARY
-	' BackgroundColor $BGCOLOR
+	BackgroundColor $FOREGROUND
 !endprocedure
 
 
@@ -27,9 +26,9 @@
 
 <style>
   root {
-    BackgroundColor $BGCOLOR
+    BackgroundColor $BACKGROUND
     FontColor $PRIMARY_TEXT
-    HyperLinkColor $ORANGE
+    ' HyperLinkColor $ORANGE
     LineColor $PRIMARY_DARK
     LineThickness 1
     Margin 10
@@ -39,7 +38,7 @@
   node {
    Padding 15
    roundcorner 20
-   BackgroundColor $BGCOLOR
+   BackgroundColor $FOREGROUND
   }
   caption {
     LineThickness 0
@@ -51,8 +50,8 @@
 	LineThickness 2
   }
   groupHeader {
-    BackgroundColor $SECONDARY
-    FontColor $INFO
+    BackgroundColor $FOREGROUND
+    FontColor $INFO_TEXT
     ' FontStyle bold
   }
   header {
@@ -62,15 +61,13 @@
 	LineThickness 2
   }
   referenceHeader {
-    BackgroundColor $BGCOLOR
-    FontColor $DARK
+    BackgroundColor $FOREGROUND
+    FontColor $PRIMARY_TEXT
     FontStyle bold
   }
   separator {
-    BackgroundColor $SECONDARY
-    ' BackgroundColor $FGCOLOR
+    BackgroundColor $FOREGROUND
     FontColor $PRIMARY_TEXT
-    ' FontColor $BGCOLOR
     FontStyle bold
   }
   title {
@@ -78,30 +75,28 @@
 	FontSize 20
 	BorderRoundCorner            8
 	BorderThickness 	         1
-	BackgroundColor  $BGCOLOR
+	BackgroundColor  $FOREGROUND
 	FontColor $PRIMARY_TEXT
-	' FontColor $PRIMARY
 	BorderColor $PRIMARY
-	' BorderColor $SECONDARY
   }
   nwdiagDiagram {
 	network {
 		$primary_scheme()
 		LineColor $PRIMARY
 		LineThickness 1.0
-		FontColor $PRIMARY_DARK
+		FontColor $PRIMARY_TEXT
 	}
 	server {
 		$primary_scheme()
 	}
 	arrow {
-		FontColor $PRIMARY_DARK
+		FontColor $PRIMARY_TEXT
 		LineColor $ARROW
 		LineColor $PRIMARY_DARK
 	}
 	group {
 		BackGroundColor $LIGHT
-		LineColor $LIGHT_DARK
+		LineColor $ARROW
 		LineThickness 2.0
 		Margin 5
 		Padding 5
@@ -117,16 +112,15 @@
 	note {
 		FontColor $INFO_TEXT
 		LineColor $INFO_DARK
-		BackGroundColor $BGCOLOR
+		BackGroundColor $BACKGROUND
 	}
 	separator {
 		LineColor $SECONDARY_DARK
 		BackgroundColor $SECONDARY
-		' BackGroundColor $BGCOLOR
 		FontColor $SECONDARY_TEXT
 	}
 	milestone {
-		FontColor $INFO
+		FontColor $INFO_TEXT
 		FontSize 16
 		FontStyle italic
 		BackGroundColor $SECONDARY
@@ -134,8 +128,7 @@
 	}
 	timeline {
 		BackgroundColor $SECONDARY
-		' FontColor $SECONDARY_TEXT
-		FontColor $INFO
+		FontColor $INFO_TEXT
 		FontName "Verdana"
 	}
 	closed {
@@ -155,7 +148,7 @@ skinparam roundcorner           8
 skinparam ParticipantPadding    40
 skinparam BoxPadding            40
 skinparam Padding               5
-skinparam ArrowColor            $GRAY
+skinparam ArrowColor            $ARROW
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
@@ -170,28 +163,25 @@ skinparam stereotype {
 }
 skinparam title {
 	FontColor	                 $PRIMARY_TEXT
-	' FontColor	                 $PRIMARY
 	BorderColor	                 $PRIMARY_DARK
-	' BorderColor	                 $SECONDARY_DARK
 	FontSize	    	         15
 	BorderRoundCorner            8
 	BorderThickness 	         1
-	BackgroundColor              $BGCOLOR
+	BackgroundColor              $BACKGROUND
 }
 
 skinparam legend {
-	BackgroundColor $BGCOLOR
+	BackgroundColor $SECONDARY
 	BorderColor $SECONDARY_DARK
-	FontColor $DARK
+	FontColor $PRIMARY_TEXT
 }
 
 !startsub swimlane
 skinparam swimlane {
 	BorderColor $INFO
 	BorderThickness 2
-	TitleBackgroundColor  $SECONDARY_LIGHT-$SECONDARY
+	TitleBackgroundColor  $SECONDARY
 	TitleFontColor $PRIMARY_TEXT
-	' TitleFontColor $PRIMARY
 }
 !endsub
 
@@ -204,11 +194,8 @@ skinparam activity {
 	EndColor $INFO
 	''
 	DiamondBackgroundColor $SECONDARY
-	' DiamondBackgroundColor $BGCOLOR
   	DiamondBorderColor $PRIMARY
-  	' DiamondBorderColor $SECONDARY_DARK
 	DiamondFontColor $PRIMARY_TEXT
-	' DiamondFontColor $SECONDARY_TEXT
 }
 !endsub
 
@@ -231,10 +218,8 @@ skinparam actor {
 
 skinparam arrow {
 	Thickness 1
-	' Thickness 3
 	Color $ARROW
-	' Color $PRIMARY
-	FontColor $FGCOLOR
+	FontColor $PRIMARY_TEXT
 }
 !endsub
 
@@ -244,38 +229,33 @@ skinparam sequence {
 	BorderColor $PRIMARY
 	' For some reason sequence title font color does not pick up from global
 	TitleFontColor $PRIMARY_TEXT
-	' TitleFontColor $PRIMARY
 	TitleBorderColor $PRIMARY
-	BackgroundColor $BGCOLOR
+	BackgroundColor $BACKGROUND
 	StartColor $PRIMARY
 	EndColor $PRIMARY
 	''
-	BoxBackgroundColor $BOXBACKGROUND
-	BoxBorderColor $GRAY
+	BoxBackgroundColor $BOX_BACKGROUND
+	BoxBorderColor $PRIMARY
 	BoxFontColor $PRIMARY_TEXT
 	''
 	DelayFontColor $PRIMARY_TEXT
 	''
 
 	LifeLineBorderColor $PRIMARY
-	' LifeLineBorderColor $SECONDARY_DARK
 	SequenceLifeLineBorderThickness 4
-	' LifeLineBorderThickness 2
 	LifeLineBackgroundColor $SECONDARY
-	' LifeLineBackgroundColor $BGCOLOR
 	''
-	GroupBorderColor $GRAY
+	GroupBorderColor $PRIMARY_DARK
 	GroupFontColor $PRIMARY_TEXT
 	GroupHeaderFontColor $INFO_TEXT
 	''
 	DividerBackgroundColor $SECONDARY
-	' DividerBackgroundColor $BGCOLOR
-    DividerBorderColor $GRAY
+    DividerBorderColor $PRIMARY
     DividerBorderThickness 2
     DividerFontColor $PRIMARY_TEXT
 	''
-	ReferenceBackgroundColor $BGCOLOR
-	ReferenceBorderColor $GRAY
+	ReferenceBackgroundColor $BACKGROUND
+	ReferenceBorderColor $PRIMARY
 	ReferenceFontColor $PRIMARY_TEXT
 	ReferenceHeaderFontColor $INFO_TEXT
 	''
@@ -289,8 +269,8 @@ skinparam SequenceLifeLineBorderThickness 2
 
 skinparam partition {
 	BorderColor $PRIMARY
-	FontColor $PRIMARY
-	BackgroundColor $BGCOLOR
+	FontColor $PRIMARY_TEXT
+	BackgroundColor $BACKGROUND
 }
 !endsub
 
@@ -325,9 +305,9 @@ skinparam boundary {
 !startsub agent
 
 skinparam agent {
-	BackgroundColor $BGCOLOR
-	BorderColor #999999
-	FontColor #333333
+	BackgroundColor $BACKGROUND
+	BorderColor $SECONDARY
+	FontColor $PRIMARY_TEXT
 }
 !endsub
 
@@ -336,20 +316,17 @@ skinparam agent {
 skinparam note {
 	BorderThickness 1
 	BackgroundColor $SECONDARY
-	' BackgroundColor $BGCOLOR
 	BorderColor $PRIMARY
-	' BorderColor $INFO
 	FontColor $PRIMARY_TEXT
-	' FontColor $INFO_TEXT
 }
 !endsub
 
 !startsub artifact
 
 skinparam artifact {
-	BackgroundColor $BGCOLOR
-	BorderColor $GRAY
-	FontColor $GRAY
+	BackgroundColor $BACKGROUND
+	BorderColor $PRIMARY
+	FontColor $SECONDARY_TEXT
 }
 !endsub
 
@@ -357,7 +334,7 @@ skinparam artifact {
 
 skinparam component {
 	$primary_scheme()
-	' BackgroundColor $BGCOLOR
+	' BackgroundColor $BACKGROUND
 	' BorderColor  $SUCCESS
 	' FontColor $SUCCESS_TEXT
 }
@@ -367,16 +344,15 @@ skinparam component {
 
 skinparam interface {
 	BackgroundColor $SECONDARY
-	' BackgroundColor $BGCOLOR
 	BorderColor  $DANGER
-	FontColor $DARK
+	FontColor $PRIMARY_TEXT
 }
 !endsub
 
 !startsub storage
 
 skinparam storage {
-	BackgroundColor $BGCOLOR
+	BackgroundColor $BACKGROUND
   	BorderColor $WARNING
 	FontColor $WARNING_TEXT
 }
@@ -385,18 +361,18 @@ skinparam storage {
 !startsub node
 
 skinparam node {
-	BackgroundColor $BGCOLOR
-	BorderColor $DARK
-	FontColor $DARK
+	BackgroundColor $BACKGROUND
+	BorderColor $PRIMARY_DARK
+	FontColor $PRIMARY_TEXT
 }
 !endsub
 
 !startsub cloud
 
 skinparam cloud {
-	BackgroundColor #F2FCFE-#eeeeee
-	BorderColor #F2FCFE
-	FontColor $DARK
+	BackgroundColor $BACKGROUND
+	BorderColor $SECONDARY
+	FontColor $PRIMARY_TEXT
 }
 !endsub
 
@@ -411,12 +387,11 @@ skinparam database {
 
 skinparam class {
 	$primary_scheme()
-	FontColor $DARK
-	' HeaderBackgroundColor $PRIMARY_LIGHT
-	' HeaderBackgroundColor $PRIMARY-$PRIMARY_DARK
-	StereotypeFontColor $DARK
+	FontColor $PRIMARY_TEXT
+	HeaderBackgroundColor $FOREGROUND
+	StereotypeFontColor $PRIMARY_TEXT
 	BorderThickness 1
-	AttributeFontColor $DARK
+	AttributeFontColor $PRIMARY_TEXT
 	AttributeFontSize 11
 }
 !endsub
@@ -425,7 +400,7 @@ skinparam class {
 
 skinparam object {
 	$primary_scheme()
-	StereotypeFontColor $DARK
+	StereotypeFontColor $PRIMARY_TEXT
 	BorderThickness 1
 	AttributeFontColor $SECONDARY_DARK
 	AttributeFontSize 11
@@ -437,7 +412,7 @@ skinparam object {
 skinparam usecase {
 	$primary_scheme()
 	BorderThickness 2
-	StereotypeFontColor $PRIMARY
+	StereotypeFontColor $PRIMARY_TEXT
 }
 !endsub
 
@@ -446,18 +421,16 @@ skinparam usecase {
 skinparam rectangle {
 	$primary_scheme()
 	BorderThickness 2
-	StereotypeFontColor $PRIMARY
+	StereotypeFontColor $PRIMARY_TEXT
 }
 !endsub
 
 !startsub package
 
 skinparam package {
-	' BackgroundColor transparent
-	BackgroundColor $BGCOLOR
+	BackgroundColor $FOREGROUND
   	BorderColor $PRIMARY
-	FontColor $DARK
-	' FontColor $PRIMARY
+	FontColor $PRIMARY_TEXT
 	BorderThickness 2
 }
 !endsub
@@ -465,7 +438,7 @@ skinparam package {
 !startsub folder
 
 skinparam folder {
-	BackgroundColor $BGCOLOR
+	BackgroundColor $FOREGROUND
   	BorderColor $WARNING
 	FontColor $WARNING
 	BorderThickness 2
@@ -475,7 +448,7 @@ skinparam folder {
 !startsub frame
 
 skinparam frame {
-	BackgroundColor $BGCOLOR
+	BackgroundColor $FOREGROUND
   	BorderColor $INFO
 	FontColor $INFO_TEXT
 	BorderThickness 2
@@ -503,7 +476,7 @@ skinparam queue {
 !startsub card
 
 skinparam card {
-	BackgroundColor $BGCOLOR
+	BackgroundColor $FOREGROUND
 	BorderColor $INFO
 	FontColor $INFO_TEXT
 }
@@ -512,9 +485,9 @@ skinparam card {
 !startsub file
 
 skinparam file {
-	BackgroundColor $BGCOLOR
-	BorderColor $GRAY
-	FontColor $GRAY
+	BackgroundColor $FOREGROUND
+	BorderColor $PRIMARY
+	FontColor $SECONDARY_TEXT
 }
 !endsub
 
@@ -546,7 +519,7 @@ style mindmapDiagram {
   LineThickness 2.0
   FontColor $PRIMARY_TEXT
   LineColor $SECONDARY
-  BackGroundColor $PRIMARY_LIGHT-$PRIMARY
+  BackGroundColor $FOREGROUND
 }
 wbsDiagram {
   'Padding 8
@@ -554,7 +527,7 @@ wbsDiagram {
   LineThickness 2.0
   FontColor $PRIMARY_TEXT
   LineColor $PRIMARY
-  BackGroundColor $PRIMARY_LIGHT-$PRIMARY
+  BackGroundColor $FOREGROUND
 }
 </style>
 !endsub
