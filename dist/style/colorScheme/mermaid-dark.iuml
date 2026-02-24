@@ -1,15 +1,15 @@
 ''
 '' Colors taken from the css file of the BS theme
 ''
-!$PRIMARY = %hsl_color(%random(1,359), %random(101), %random(101))
-!$SECONDARY = %hsl_color(%random(1,359), %random(101), %random(101))
-!$LIGHT = %hsl_color(%random(1,359), %random(101), %random(101))
-!$DARK = %hsl_color(%random(1,359), %random(101), %random(101))
+!$PRIMARY = "#81B1DB"
+!$SECONDARY = "#474949"
+!$LIGHT = "#F8F9FA"
+!$DARK = "#1F2020"
 
-!$SUCCESS = %hsl_color(%random(1,359), %random(101), %random(101))
-!$INFO = %hsl_color(%random(1,359), %random(101), %random(101))
-!$WARNING = %hsl_color(%random(1,359), %random(101), %random(101))
-!$DANGER = %hsl_color(%random(1,359), %random(101), %random(101))
+!$SUCCESS = "#73A839"
+!$INFO = "#White"
+!$WARNING = "#DD5600"
+!$DANGER = "#C71C22"
 
 !$LIGHTEN_DARKEN_FACTOR = 20
 !$TRANSPARENCY_LEVEL = 90
@@ -19,25 +19,29 @@
 '' *_DARK = shade (darker) of the main color of 80%
 ''          and SHADE is calculated by clr * (1 - shade_factor)
 ''
-!$BACKGROUND = %hsl_color(%random(1,359), %random(101), %random(101))
-!$FOREGROUND = %hsl_color(%random(1,359), %random(101), %random(101))
+!$BACKGROUND = "#2A303C"
+!$FOREGROUND = "#1F2020"
 !$PRIMARY_LIGHT = %lighten($PRIMARY, $LIGHTEN_DARKEN_FACTOR)
 !$PRIMARY_DARK = %darken($PRIMARY, $LIGHTEN_DARKEN_FACTOR)
-!$PRIMARY_TEXT = $PRIMARY
+!$PRIMARY_TEXT = "#White"
 !$SECONDARY_LIGHT = %lighten($SECONDARY, $LIGHTEN_DARKEN_FACTOR)
 !$SECONDARY_DARK = %darken($SECONDARY, $LIGHTEN_DARKEN_FACTOR)
 !$SECONDARY_TEXT = $SECONDARY_DARK
 !$INFO_LIGHT = %lighten($INFO, $LIGHTEN_DARKEN_FACTOR)
+!$INFO_DARK = %darken($INFO, $LIGHTEN_DARKEN_FACTOR)
 !$INFO_TEXT = $INFO
 !$SUCCESS_LIGHT = %lighten($SUCCESS, $LIGHTEN_DARKEN_FACTOR)
+!$SUCCESS_DARK = %darken($SUCCESS, $LIGHTEN_DARKEN_FACTOR)
 !$SUCCESS_TEXT = $SUCCESS
 !$WARNING_LIGHT = %lighten($WARNING, $LIGHTEN_DARKEN_FACTOR)
+!$WARNING_DARK = %darken($WARNING, $LIGHTEN_DARKEN_FACTOR)
 !$WARNING_TEXT = $WARNING
 !$DANGER_LIGHT = %lighten($DANGER, $LIGHTEN_DARKEN_FACTOR)
+!$DANGER_DARK = %darken($DANGER, $LIGHTEN_DARKEN_FACTOR)
 !$DANGER_TEXT = $DANGER
-!$ARROW = $PRIMARY_DARK
+!$ARROW = "#White"
 !$BOX_BACKGROUND = $FOREGROUND
-!$PARTICIPANT_BACKGROUND = $SECONDARY
+!$PARTICIPANT_BACKGROUND = $FOREGROUND
 
 
 ' skinparam backgroundColor $BACKGROUND

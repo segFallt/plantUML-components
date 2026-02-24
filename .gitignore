@@ -1,2 +1,5 @@
 *.vsidx
 *.vs
+*.png
+*.svg
+plantuml.jar

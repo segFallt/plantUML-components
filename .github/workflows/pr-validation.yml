@@ -1,0 +1,66 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download PlantUML
+        run: |
+          curl -sSL -o plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar
+
+      - name: Validate dist/ structure
+        run: |
+          echo "Checking dist/ structure..."
+          test -f dist/Common.iuml || { echo "Missing dist/Common.iuml"; exit 1; }
+          test -d dist/style || { echo "Missing dist/style/"; exit 1; }
+          test -d dist/functional || { echo "Missing dist/functional/"; exit 1; }
+          test -d dist/3rdParty || { echo "Missing dist/3rdParty/"; exit 1; }
+          echo "dist/ structure OK"
+
+      - name: Patch examples to use local dist paths
+        run: |
+          for f in examples/**/*.puml; do
+            sed -i 's|https://raw.githubusercontent.com/segFallt/plantUML-components/v[0-9.]*|dist/..|g' "$f"
+          done
+          # Replace !define with !$VAR = "path" syntax for local includes
+          for f in examples/sequence/*.puml; do
+            sed -i 's|!define \$COMPONENTS_PUML .*|!\$COMPONENTS_PUML = "../../dist"|g' "$f"
+          done
+          for f in examples/aws/*.puml; do
+            sed -i 's|!define \$COMPONENTS_PUML .*|!\$COMPONENTS_PUML = "../../dist"|g' "$f"
+          done
+
+      - name: Render examples
+        run: |
+          ERRORS=0
+          for f in examples/**/*.puml; do
+            echo "Rendering $f..."
+            if ! java -DPLANTUML_SECURITY_PROFILE=UNSECURE -jar plantuml.jar -failfast2 "$f" 2>&1; then
+              echo "ERROR: Failed to render $f"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+          if [ $ERRORS -gt 0 ]; then
+            echo "$ERRORS example(s) failed to render"
+            exit 1
+          fi
+          echo "All examples rendered successfully"
+
+      - name: Clean up generated files
+        if: always()
+        run: |
+          find examples -name "*.png" -delete
+          rm -f plantuml.jar

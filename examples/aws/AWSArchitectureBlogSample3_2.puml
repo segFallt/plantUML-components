@@ -1,17 +1,7 @@
 @startuml
 
-!define BASEPATH ../global/style/components
-!include BASEPATH/awslib/AWSCommon.puml
-!include BASEPATH/awslib/AWSSimplified.puml
-!include BASEPATH/awslib/Compute/all.puml
-!include BASEPATH/awslib/mobile/all.puml
-!include BASEPATH/awslib/general/all.puml
-
-!include BASEPATH/awslib/GroupIcons/all.puml
-!include BASEPATH/awslib/CustomerEngagement/all.puml
-!include BASEPATH/awslib/NetworkingAndContentDelivery/all.puml
-!include BASEPATH/awslib/EndUserComputing/all.puml
-!include BASEPATH/awslib/ApplicationIntegration/all.puml
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!include $COMPONENTS_PUML/3rdParty/aws14/AwsCommon.iuml
 
 'skinparam linetype polyline
 
@@ -25,7 +15,7 @@
     }
     rectangle $alias <<$alias>> as "
         <color:3F8624><$VPCSubnetPublic*.4> Public Subnet</color>\n
-        <color:$colour><$MySprite></color>\n$label" 
+        <color:$colour><$MySprite></color>\n$label"
 
 !endprocedure
 
@@ -36,10 +26,10 @@
         borderColor<<$alias>> e6fbff
         shadowing<<$alias>> true
     }
-    
+
     rectangle $alias <<$alias>> as "
         <color:3B48CC><$VPCSubnetPrivate*.4> Private Subnet</color>\n
-        <color:$colour><$MySprite></color>\n$label" 
+        <color:$colour><$MySprite></color>\n$label"
 
 !endprocedure
 
@@ -51,10 +41,10 @@
         borderColor<<$alias>> e6fbff
         shadowing<<$alias>> true
     }
-    
+
     rectangle $alias <<$alias>> as "
         <color:3F8624><$VPC*.4></color> <color:grey>$label</color>\n
-        <color:$colour><$MySprite></color>\n$description" 
+        <color:$colour><$MySprite></color>\n$description"
 
 !endprocedure
 
@@ -66,12 +56,12 @@ skinparam rectangle {
     }
 rectangle  BBVA <<BBVA>> as "
         =<color:blue>BBVA</color>\n
-        \nAuthentication Service" 
+        \nAuthentication Service"
 
 
 
 AutoScalingGroup(AutoScalingGroup1, "Auto Scaling Group", "")
-ELBNetworkLoadBalancer(ELBNetworkLoadBalancer, "Network Load Balancer", " ")
+ElasticLoadBalancingNetworkLoadBalancer(ELBNetworkLoadBalancer, "Network Load Balancer", " ")
 VPCInternetGateway(VPCInternetGateway, "Internet Gateway", " ")
 Internetalt1(InternetAlt1, "Internet", " ")
 'VPCElasticNetworkInterface(VPCElasticNetworkInterface, " ", " ")
@@ -131,11 +121,11 @@ S3TransitGatewayStaging -> EC2Instance1
 DirectConnect -u-> VPCCustomerGateway
 VPCVPNConnection -u-> VPCCustomerGateway
 
-Appstream2_02 -d-> VPCElasticNetworkInterface2 
+Appstream2_02 -d-> VPCElasticNetworkInterface2
 VPCElasticNetworkInterface2 -> S3TransitGatewayStaging
 
 
-User -d-> BBVA 
+User -d-> BBVA
 BBVA -d-> Appstream2_02
 
 
