@@ -33,14 +33,10 @@ jobs:
       - name: Patch examples to use local dist paths
         run: |
           for f in examples/**/*.puml; do
-            sed -i 's|https://raw.githubusercontent.com/segFallt/plantUML-components/v[0-9.]*|dist/..|g' "$f"
-          done
-          # Replace !define with !$VAR = "path" syntax for local includes
-          for f in examples/sequence/*.puml; do
-            sed -i 's|!define \$COMPONENTS_PUML .*|!\$COMPONENTS_PUML = "../../dist"|g' "$f"
-          done
-          for f in examples/aws/*.puml; do
-            sed -i 's|!define \$COMPONENTS_PUML .*|!\$COMPONENTS_PUML = "../../dist"|g' "$f"
+            # Remove $COMPONENTS_PUML variable definition lines
+            sed -i '/!define \$COMPONENTS_PUML/d' "$f"
+            # Replace $COMPONENTS_PUML/ references in includes with relative path
+            sed -i 's|\$COMPONENTS_PUML/|../../dist/|g' "$f"
           done
 
       - name: Render examples

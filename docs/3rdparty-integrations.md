@@ -10,7 +10,7 @@ Three versions of AWS icon wrappers are provided, each pulling sprites from the 
 **Upstream:** `awslabs/aws-icons-for-plantuml` v14.0
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
 !include $COMPONENTS_PUML/3rdParty/aws14/AwsCommon.iuml
 
 EC2(myInstance, "Web Server", "t3.micro")
@@ -39,7 +39,7 @@ Same structure as v14 but pulls from the v11.1 release. The `aws/` and `aws11/` 
 **Upstream:** [Azure-PlantUML](https://github.com/plantuml-stdlib/Azure-PlantUML) release/2-1
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
 !include $COMPONENTS_PUML/3rdParty/azure2.1/azureCommon.iuml
 
 AzureFunction(fn, "My Function", "Node.js")
@@ -56,7 +56,7 @@ Pre-includes: `AzureCommon.puml`, `AzureFunction.puml`, `AzureEventHub.puml`.
 **Upstream:** Custom sprites bundled in `KubernetesBase.iuml`
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
 !include $COMPONENTS_PUML/3rdParty/kubernetes/KubernetesCommon.iuml
 
 Deploy(myDeploy, "API", "v1.2")
@@ -78,7 +78,7 @@ Additional files:
 **Entry point:** `dist/3rdParty/pingIdentity/pingIdentityStyleAndComponents.iuml`
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
 !include $COMPONENTS_PUML/3rdParty/pingIdentity/pingIdentityStyleAndComponents.iuml
 
 PingContainer(ping, "PingFederate", "Authentication Server")
@@ -97,7 +97,7 @@ Provides PingIdentity and PingFedAdapter sprites with styled containers.
 Provides sequence diagram procedures for common OAuth2/OIDC authentication flows.
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
 !include $COMPONENTS_PUML/3rdParty/auth.iuml
 
 $internalClientCredentialAuth(Client, AuthServer, "Service Auth", "scope=api")

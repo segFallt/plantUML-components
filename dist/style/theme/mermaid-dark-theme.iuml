@@ -1,2 +1,7 @@
-!include ../colorScheme/mermaid-dark.iuml
-!include ../layout/lucid-style.iuml
+!if %variable_exists("$COMPONENTS_PUML")
+    !include $COMPONENTS_PUML/style/colorScheme/mermaid-dark.iuml
+    !include $COMPONENTS_PUML/style/layout/lucid-style.iuml
+!else
+    !include ../colorScheme/mermaid-dark.iuml
+    !include ../layout/lucid-style.iuml
+!endif
