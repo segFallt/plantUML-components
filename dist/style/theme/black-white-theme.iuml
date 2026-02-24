@@ -1,2 +1,7 @@
-!include ../colorScheme/black-white.iuml
-!include ../layout/lucid-style.iuml
+!if %variable_exists("$COMPONENTS_PUML")
+    !include $COMPONENTS_PUML/style/colorScheme/black-white.iuml
+    !include $COMPONENTS_PUML/style/layout/lucid-style.iuml
+!else
+    !include ../colorScheme/black-white.iuml
+    !include ../layout/lucid-style.iuml
+!endif

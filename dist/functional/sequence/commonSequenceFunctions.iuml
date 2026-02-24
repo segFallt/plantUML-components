@@ -1,4 +1,8 @@
-!include ../data/array.iuml
+!if %variable_exists("$COMPONENTS_PUML")
+    !include $COMPONENTS_PUML/functional/data/array.iuml
+!else
+    !include ../data/array.iuml
+!endif
 
 !procedure $setAutoNumber($start="1", $increment="1")
     autonumber $start $increment
