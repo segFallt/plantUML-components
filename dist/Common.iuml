@@ -1,0 +1,7 @@
+' plantUML-components Common
+' https://github.com/segFallt/plantUML-components
+'
+' Root entry point for the plantUML-components library.
+' Include this file first to establish the library version.
+
+!$PLANTUML_COMPONENTS_VERSION = "2.0.0"

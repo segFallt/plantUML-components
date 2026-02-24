@@ -1,8 +1,8 @@
 @startuml
 
-!$GLOBAL_BASEPATH = ../../_global
-!include $GLOBAL_BASEPATH/style/theme/mermaid-dark-theme.iuml
-!include $GLOBAL_BASEPATH/functional/sequence/commonSequenceFunctions.iuml
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!include $COMPONENTS_PUML/style/theme/mermaid-dark-theme.iuml
+!include $COMPONENTS_PUML/functional/sequence/commonSequenceFunctions.iuml
 
 $setAutoNumber()
 $setMaxMessageSize(200)

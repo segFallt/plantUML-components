@@ -1,0 +1,18 @@
+@startuml
+
+!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.0/dist
+!include $COMPONENTS_PUML/style/theme/ocean-blue-theme.iuml
+!include $COMPONENTS_PUML/functional/sequence/commonSequenceFunctions.iuml
+
+$setAutoNumber()
+$setMaxMessageSize(200)
+
+$addParticipant(Alice, "Alice")
+$addParticipant(Bob, "Bob")
+
+Alice -> Bob ++
+Alice <-- Bob --
+Alice -> Bob: text
+note right of Alice: note
+
+@enduml

@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version
+        id: version
+        run: |
+          VERSION=$(cat VERSION)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if git rev-parse "v${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          body: |
+            ## plantUML-components ${{ steps.version.outputs.tag }}
+
+            ### Quick Start
+
+            Add this to the top of your `.puml` file:
+
+            ```plantuml
+            !define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/${{ steps.version.outputs.tag }}/dist
+            !include $COMPONENTS_PUML/Common.iuml
+            !include $COMPONENTS_PUML/style/theme/ocean-blue-theme.iuml
+            !include $COMPONENTS_PUML/functional/sequence/commonSequenceFunctions.iuml
+            ```
+
+            See [README](https://github.com/segFallt/plantUML-components/blob/${{ steps.version.outputs.tag }}/README.md) for full documentation.
+          generate_release_notes: true

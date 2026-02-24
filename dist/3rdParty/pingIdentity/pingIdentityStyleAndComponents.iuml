@@ -1,6 +1,3 @@
-@startuml
-
-
 sprite $PingIdentity [64x64/16z] {
 xTG74Yeh44RX9iD_Ul_hVGCuvHXVplTK2TBMPrRze_hHZtxqen_n-pG3z2lo7LinpEpNUEnMB22v7IL-jLzLtyVm6xrL26QMVwtFEKUR2GLBw5Tw1szsLC3T
 fmVMWcuns_kBHxTtBi9ekIDNhNWlkSBMhUJIS5SelFCaCmi-ryQUXlCroOjT4kzyDBFesSmwYvwvFDgrpAVddq-Vx9xeSqjr3NFkwCcx-uBMJxzErNrkWxGE
@@ -47,8 +44,3 @@ PingContainerStyle(PingFedAdapter, $PingColor)
 
 PingContainerStyle(PingFedAdapter, $PingColor)
 !define PingSelectorContainer(alias, description, label) PingRectangleEntity(alias, PingFedAdapter, description, label, .3, #Blue)
-
-
-
-
-@enduml
