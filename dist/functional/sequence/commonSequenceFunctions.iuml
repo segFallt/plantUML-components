@@ -58,7 +58,7 @@
         ' !log participantVariable is $participantVariable
         !$participantLabel = $getArrayValue($participantLabelsArrayName,$i)
         ' !log participantLabel is $participantLabel
-        / rnote over $participantVariable $participantColor : $participantLabel
+        / rnote over $participantVariable : $participantLabel
         
         !$i = $i + 1
     !endwhile
