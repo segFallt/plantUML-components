@@ -4,7 +4,7 @@
 ' Root entry point for the plantUML-components library.
 ' Include this file first to establish the library version.
 
-!$PLANTUML_COMPONENTS_VERSION = "2.1.0"
+!$PLANTUML_COMPONENTS_VERSION = "2.1.1"
 
 ' Default $COMPONENTS_PUML fallback for local usage
 !if %not(%variable_exists("$COMPONENTS_PUML"))

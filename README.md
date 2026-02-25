@@ -9,7 +9,7 @@ Add these lines to the top of your `.puml` file:
 ```plantuml
 @startuml
 
-!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.1/dist"
 !include $COMPONENTS_PUML/Common.iuml
 !include $COMPONENTS_PUML/style/theme/ocean-blue-theme.iuml
 !include $COMPONENTS_PUML/functional/sequence/commonSequenceFunctions.iuml
@@ -99,8 +99,8 @@ See [docs/contributing.md](docs/contributing.md) for guidelines on adding themes
 
 This project uses [Semantic Versioning](https://semver.org/). The current version is defined in `VERSION` and `dist/Common.iuml`.
 
-Pin your includes to a specific release tag (e.g., `v2.1.0`) to avoid breaking changes:
+Pin your includes to a specific release tag (e.g., `v2.1.1`) to avoid breaking changes:
 
 ```plantuml
-!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.1/dist"
 ```
