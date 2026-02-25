@@ -112,3 +112,12 @@ Include the color logging utility to print all resolved color values:
 ```
 
 This logs all variable values via `!log` during rendering.
+
+## LEGACY Mode
+
+For older PlantUML versions that require `useBetaStyle`, set `!$LEGACY = "true"` before including a theme. This enables beta style rendering and adds mindmap/WBS diagram styling. You can also set the `LEGACY` environment variable to `"true"`.
+
+```plantuml
+!$LEGACY = "true"
+!include $COMPONENTS_PUML/style/theme/ocean-blue-theme.iuml
+```

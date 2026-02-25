@@ -1,10 +1,9 @@
-
-
+' AwsCommon - AWS v11.1 base configuration, entity macros, and container definitions
 !$AWS_BASEPATH = "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v11.1/dist"
 !include $AWS_BASEPATH/AWSCommon.puml
 
 
-!$awsBasePath = "../aws"
+!$awsBasePath = "../aws11"
 !include $awsBasePath/AwsReferences.iuml
 !include $awsBasePath/AwsContainer.iuml
 
@@ -61,7 +60,6 @@ AwsEntityStyle(ElasticLoadBalancingNetworkLoadBalancer)
 AwsEntityStyle(Internet)
 AwsEntityStyle(Lambda)
 AwsEntityStyle(LambdaLambdaFunction)
-AwsEntityStyle(SecretsManager)
 AwsEntityStyle(SecretsManager)
 AwsEntityStyle(SimpleQueueService)
 AwsEntityStyle(SimpleStorageService)

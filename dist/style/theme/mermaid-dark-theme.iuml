@@ -1,3 +1,4 @@
+' mermaid-dark-theme - Combines mermaid-dark color scheme with lucid-style layout
 !if %variable_exists("$COMPONENTS_PUML")
     !include $COMPONENTS_PUML/style/colorScheme/mermaid-dark.iuml
     !include $COMPONENTS_PUML/style/layout/lucid-style.iuml

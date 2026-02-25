@@ -6,11 +6,9 @@
 
 !include $AWS_BASEPATH/Analytics/all.puml
 !include $AWS_BASEPATH/ApplicationIntegration/all.puml
-!include $AWS_BASEPATH/ApplicationIntegration/all.puml
 !include $AWS_BASEPATH/Compute/all.puml
 !include $AWS_BASEPATH/Containers/all.puml
 !include $AWS_BASEPATH/General/all.puml
-!include $AWS_BASEPATH/GroupIcons/all.puml
 !include $AWS_BASEPATH/GroupIcons/all.puml
 !include $AWS_BASEPATH/NetworkingContentDelivery/all.puml
 !include $AWS_BASEPATH/SecurityIdentityCompliance/all.puml

@@ -1,6 +1,4 @@
-''
-'' Colors taken from the css file of the BS theme
-''
+' random - Randomly generated colors using HSL for unique diagrams each render
 !$PRIMARY = %hsl_color(%random(1,359), %random(101), %random(101))
 !$SECONDARY = %hsl_color(%random(1,359), %random(101), %random(101))
 !$LIGHT = %hsl_color(%random(1,359), %random(101), %random(101))
@@ -44,5 +42,4 @@
 !$PARTICIPANT_BACKGROUND = $SECONDARY
 
 
-' skinparam backgroundColor $BACKGROUND
 skinparam useBetaStyle false

@@ -1,6 +1,11 @@
+' KubernetesRaw - Transparent borders, simplified Kubernetes styling
 
 !$kubernetesBasePath = "../kubernetes"
-!include KubernetesBase.iuml
+!if %variable_exists("$COMPONENTS_PUML")
+    !include $COMPONENTS_PUML/3rdParty/kubernetes/KubernetesBase.iuml
+!else
+    !include KubernetesBase.iuml
+!endif
 
 
 
@@ -13,7 +18,7 @@
 skinparam rectangle<<e_stereo>> {
     BackgroundColor Kubernetes_BG_COLOR
     BorderColor Kubernetes_BORDER_COLOR
-    
+
 }
 !enddefinelong
 
@@ -26,4 +31,4 @@ rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZ
 
 !definelong KubernetesEntity(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
 rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
-!enddefinelong' Colors
+!enddefinelong

@@ -2,7 +2,7 @@
 
 ## AWS Icons
 
-Three versions of AWS icon wrappers are provided, each pulling sprites from the [aws-icons-for-plantuml](https://github.com/awslabs/aws-icons-for-plantuml) repository.
+Two versions of AWS icon wrappers are provided, each pulling sprites from the [aws-icons-for-plantuml](https://github.com/awslabs/aws-icons-for-plantuml) repository.
 
 ### AWS v14 (Recommended)
 
@@ -10,7 +10,7 @@ Three versions of AWS icon wrappers are provided, each pulling sprites from the 
 **Upstream:** `awslabs/aws-icons-for-plantuml` v14.0
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
 !include $COMPONENTS_PUML/3rdParty/aws14/AwsCommon.iuml
 
 EC2(myInstance, "Web Server", "t3.micro")
@@ -26,10 +26,10 @@ Pre-configured container macros: `CorporateDataCenter`, `Cloud`, `VirtualPrivate
 
 ### AWS v11
 
-**Entry point:** `dist/3rdParty/aws/AwsCommon.iuml` or `dist/3rdParty/aws11/AwsCommon.iuml`
+**Entry point:** `dist/3rdParty/aws11/AwsCommon.iuml`
 **Upstream:** `awslabs/aws-icons-for-plantuml` v11.1
 
-Same structure as v14 but pulls from the v11.1 release. The `aws/` and `aws11/` directories contain the same library version.
+Same structure as v14 but pulls from the v11.1 release.
 
 ---
 
@@ -39,7 +39,7 @@ Same structure as v14 but pulls from the v11.1 release. The `aws/` and `aws11/` 
 **Upstream:** [Azure-PlantUML](https://github.com/plantuml-stdlib/Azure-PlantUML) release/2-1
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
 !include $COMPONENTS_PUML/3rdParty/azure2.1/azureCommon.iuml
 
 AzureFunction(fn, "My Function", "Node.js")
@@ -56,7 +56,7 @@ Pre-includes: `AzureCommon.puml`, `AzureFunction.puml`, `AzureEventHub.puml`.
 **Upstream:** Custom sprites bundled in `KubernetesBase.iuml`
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
 !include $COMPONENTS_PUML/3rdParty/kubernetes/KubernetesCommon.iuml
 
 Deploy(myDeploy, "API", "v1.2")
@@ -78,7 +78,7 @@ Additional files:
 **Entry point:** `dist/3rdParty/pingIdentity/pingIdentityStyleAndComponents.iuml`
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
 !include $COMPONENTS_PUML/3rdParty/pingIdentity/pingIdentityStyleAndComponents.iuml
 
 PingContainer(ping, "PingFederate", "Authentication Server")
@@ -97,7 +97,7 @@ Provides PingIdentity and PingFedAdapter sprites with styled containers.
 Provides sequence diagram procedures for common OAuth2/OIDC authentication flows.
 
 ```plantuml
-!define $COMPONENTS_PUML https://raw.githubusercontent.com/segFallt/plantUML-components/v2.0.1/dist
+!$COMPONENTS_PUML = "https://raw.githubusercontent.com/segFallt/plantUML-components/v2.1.0/dist"
 !include $COMPONENTS_PUML/3rdParty/auth.iuml
 
 $internalClientCredentialAuth(Client, AuthServer, "Service Auth", "scope=api")
@@ -113,4 +113,4 @@ $introspectToken(ResourceServer, AuthServer, "Token Validation", "")
 | `$introspectToken($client, $server, $context, $requestNote)` | Token introspection via `/oauth2/as/introspect.oauth2` |
 | `$jwksLocalValidateToken($client, $server, $context, $requestNote)` | Local JWT validation using JWKS public keys |
 | `$tokenExchange($client, $server, $context, $requestNote)` | OAuth2 token exchange (RFC 8693) |
-| `$PrintPingAuthorizeRequestDataContractNote($participant)` | Adds a link note to PingAuthorize data contract docs |
+| `$PrintPingAuthorizeRequestDataContractNote($participant, $url)` | Adds a link note to PingAuthorize data contract docs |

@@ -1,6 +1,11 @@
+' KubernetesSimplified - Hidden stereotypes, icon-only Kubernetes display
 
 !$kubernetesBasePath = "../kubernetes"
-!include KubernetesBase.iuml
+!if %variable_exists("$COMPONENTS_PUML")
+    !include $COMPONENTS_PUML/3rdParty/kubernetes/KubernetesBase.iuml
+!else
+    !include KubernetesBase.iuml
+!endif
 
 ' Styling
 ' ##################################

@@ -35,11 +35,6 @@ sprite $CorporateDataCenter [40x40/16z] unpPW0462Ac3qjHKnq03TKFP7x1u065ySO8kJh4w
     }
 !enddefinelong
 
-' !definelong AwsContainer(alias, stereotype, description, label, scale, e_color)
-'     rectangle alias <<stereotype>> as "\l<color:e_color><$stereotype*scale> description</color>\n<size:10>label</size>"
-' !enddefinelong
-
-
 !definelong AwsContainer(alias, stereotype, description, label, scale, e_color)
     rectangle alias <<stereotype>> as "\l<color:e_color><$stereotype*scale> description</color>\n<size:10>label</size>"
 !enddefinelong

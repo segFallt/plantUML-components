@@ -1,8 +1,12 @@
+' auth - OAuth2/OIDC sequence diagram procedures for common authentication flows
 
-
-!procedure $PrintPingAuthorizeRequestDataContractNote($participant)
+!procedure $PrintPingAuthorizeRequestDataContractNote($participant, $url="")
     note right of $participant
-        Link: [[https://confluence.greenwayhealth.com/confluence/x/WoL7Gw PingAuthorize data contract]]
+        !if ($url != "")
+            Link: [[$url PingAuthorize data contract]]
+        !else
+            PingAuthorize data contract (provide $url parameter)
+        !endif
     end note
 !endprocedure
 
