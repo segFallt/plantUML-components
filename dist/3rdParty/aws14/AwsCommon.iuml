@@ -4,7 +4,11 @@
 !include $AWS_BASEPATH/AWSCommon.puml
 
 
-!$awsBasePath = "../aws14"
+!if %variable_exists("$COMPONENTS_PUML")
+    !$awsBasePath = $COMPONENTS_PUML + "/3rdParty/aws14"
+!else
+    !$awsBasePath = "../aws14"
+!endif
 !include $awsBasePath/AwsReferences.iuml
 !include $awsBasePath/AwsContainer.iuml
 

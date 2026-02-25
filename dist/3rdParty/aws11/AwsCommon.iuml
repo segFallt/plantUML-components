@@ -3,7 +3,11 @@
 !include $AWS_BASEPATH/AWSCommon.puml
 
 
-!$awsBasePath = "../aws11"
+!if %variable_exists("$COMPONENTS_PUML")
+    !$awsBasePath = $COMPONENTS_PUML + "/3rdParty/aws11"
+!else
+    !$awsBasePath = "../aws11"
+!endif
 !include $awsBasePath/AwsReferences.iuml
 !include $awsBasePath/AwsContainer.iuml
 
