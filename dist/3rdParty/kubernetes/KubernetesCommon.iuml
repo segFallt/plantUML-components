@@ -1,6 +1,11 @@
+' KubernetesCommon - Full styling with entity macros for Kubernetes diagrams
 
 !$kubernetesBasePath = "../kubernetes"
-!include KubernetesBase.iuml
+!if %variable_exists("$COMPONENTS_PUML")
+    !include $COMPONENTS_PUML/3rdParty/kubernetes/KubernetesBase.iuml
+!else
+    !include KubernetesBase.iuml
+!endif
 
 
 skinparam linetype ortho
@@ -46,7 +51,6 @@ skinparam rectangle<<e_stereo>> {
     !else
         rectangle "==e_label\n<color:e_color><$e_sprite></color>" <<e_stereo>> as e_alias
     !endif
-    ' rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<e_stereo>> as e_alias
 !enddefinelong
 
 !definelong KubernetesEntity(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
@@ -65,6 +69,3 @@ KubernetesEntityColoring(sts)
 
 KubernetesEntityColoring(crd)
 !define CustomResourceDefinition(e_alias, e_label, e_techn) KubernetesEntity(e_alias, e_label, e_techn, Kubernetes_COLOR, crd, crd)
-
-
-

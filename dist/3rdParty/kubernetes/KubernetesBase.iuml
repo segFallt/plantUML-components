@@ -1,6 +1,7 @@
-!$STL_BASEPATH = "https://raw.githubusercontent.com/plantuml/plantuml-stdlib/master/kubernetes"
+' KubernetesBase - Sprite includes from plantuml-stdlib for Kubernetes icons
+!$STL_BASEPATH = "https://raw.githubusercontent.com/plantuml-stdlib/plantuml-kubernetes-sprites/master/resource"
 
-!include $STL_BASEPATH/k8s-sprites-labeled-25pct.puml
+!include $STL_BASEPATH/k8s-sprites-labeled-25pct.iuml
 
 
 ' Colors

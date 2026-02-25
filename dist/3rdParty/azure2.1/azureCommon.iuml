@@ -1,6 +1,6 @@
 
 
-!$AZURE_BASEPATH = "https://github.com/plantuml-stdlib/Azure-PlantUML/tree/release/2-1/dist"
+!$AZURE_BASEPATH = "https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/release/2-1/dist"
 
 !include $AZURE_BASEPATH/AzureCommon.puml
 

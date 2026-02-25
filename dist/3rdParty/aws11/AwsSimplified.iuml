@@ -4,7 +4,7 @@
 
 !include $AWS_BASEPATH/AWSSimplified.puml
 
-!$awsBasePath = "../aws"
+!$awsBasePath = "../aws11"
 !include $awsBasePath/AwsReferences.iuml
 !include $awsBasePath/AwsContainer.iuml
 
@@ -15,11 +15,6 @@
 skinparam linetype ortho
 skinparam Shadowing false
 
-
-' AWS Container Elements
-' ##################################
-
-AwsContainerStyle(CorporateDataCenter, #232F3E, transparent)
 
 ' AWS Entity Elements
 ' ##################################
@@ -43,7 +38,6 @@ AwsEntityStyle(ElasticLoadBalancingNetworkLoadBalancer)
 AwsEntityStyle(Internet)
 AwsEntityStyle(Lambda)
 AwsEntityStyle(LambdaLambdaFunction)
-AwsEntityStyle(SecretsManager)
 AwsEntityStyle(SecretsManager)
 AwsEntityStyle(SimpleQueueService)
 AwsEntityStyle(SimpleStorageService)

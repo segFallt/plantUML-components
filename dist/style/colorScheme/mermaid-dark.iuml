@@ -1,6 +1,4 @@
-''
-'' Colors taken from the css file of the BS theme
-''
+' mermaid-dark - Dark theme inspired by Mermaid.js dark mode
 !$PRIMARY = "#81B1DB"
 !$SECONDARY = "#474949"
 !$LIGHT = "#F8F9FA"
@@ -44,5 +42,4 @@
 !$PARTICIPANT_BACKGROUND = $FOREGROUND
 
 
-' skinparam backgroundColor $BACKGROUND
 skinparam useBetaStyle false

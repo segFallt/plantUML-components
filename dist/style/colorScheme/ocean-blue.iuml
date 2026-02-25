@@ -1,6 +1,4 @@
-''
-'' Colors taken from the css file of the BS theme
-''
+' ocean-blue - Light theme with blue primary color and white backgrounds
 !$PRIMARY = "#4881b3"
 !$SECONDARY = "#f5fbff"
 !$LIGHT = "#F8F9FA"
@@ -44,7 +42,4 @@
 !$PARTICIPANT_BACKGROUND = $SECONDARY
 
 
-' skinparam backgroundColor $BACKGROUND
 skinparam useBetaStyle false
-
-' !include ./color_logging.iuml

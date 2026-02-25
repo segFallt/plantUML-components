@@ -1,4 +1,6 @@
-!procedure SetLayout($stereo = layout)
+' spacer - Invisible layout spacer elements for controlling diagram alignment
+
+!procedure $setLayout($stereo = layout)
 skinparam rectangle<<$stereo>> {
   borderColor Transparent
   backgroundColor Transparent
@@ -7,15 +9,13 @@ skinparam rectangle<<$stereo>> {
 }
 !endprocedure
 
-
-
-!procedure Spacer($alias, $count)
+!procedure $spacer($alias, $count)
 
 !local $i = 1
 
 !$stereo = "layout"
 
-SetLayout($stereo)
+$setLayout($stereo)
 
 rectangle $alias <<$stereo>> {
     !while ($i <= $count)
@@ -26,12 +26,29 @@ rectangle $alias <<$stereo>> {
 
 !endprocedure
 
-!procedure SpacerLink($spacer, $obj1, $obj2)
+!procedure $spacerLink($spacer, $obj1, $obj2)
 $obj1 -[hidden]- $spacer
 $spacer -[hidden]- $obj2
 !endprocedure
 
+!procedure $spacerAndLink($alias, $count, $obj1, $obj2)
+$spacer($alias, $count)
+$spacerLink($alias, $obj1, $obj2)
+!endprocedure
+
+' Deprecated aliases - use $spacer, $spacerLink, $spacerAndLink instead
+!procedure SetLayout($stereo = layout)
+    $setLayout($stereo)
+!endprocedure
+
+!procedure Spacer($alias, $count)
+    $spacer($alias, $count)
+!endprocedure
+
+!procedure SpacerLink($spacer, $obj1, $obj2)
+    $spacerLink($spacer, $obj1, $obj2)
+!endprocedure
+
 !procedure SpacerAndLink($alias, $count, $obj1, $obj2)
-Spacer($alias, $count)
-SpacerLink($alias, $obj1, $obj2)
+    $spacerAndLink($alias, $count, $obj1, $obj2)
 !endprocedure

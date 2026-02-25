@@ -27,11 +27,6 @@ FbRtjSBfVNieEL06NxqicY5B8VkKrQruE7mQ3AiZT_Gbe2D17o0aCIeIgfARq7U-BZEuNbjZUa2_8oBw
     }
 !enddefinelong
 
-
-' !definelong PingRectangleEntity(alias, stereotype, description, label, scale, e_color, s_color)
-'     rectangle alias <<stereotype>> as "\l<color:s_color><$stereotype*scale></color><color:e_color>  description</color>\n<size:10>label</size>"
-' !enddefinelong
-
 !definelong PingRectangleEntity(alias, stereotype, description, label, scale, e_color)
     rectangle alias <<stereotype>> as "\l<color:e_color><$stereotype*scale>  description</color>\n<size:10>label</size>"
 !enddefinelong

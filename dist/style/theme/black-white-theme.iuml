@@ -1,3 +1,4 @@
+' black-white-theme - Combines black-white color scheme with lucid-style layout
 !if %variable_exists("$COMPONENTS_PUML")
     !include $COMPONENTS_PUML/style/colorScheme/black-white.iuml
     !include $COMPONENTS_PUML/style/layout/lucid-style.iuml

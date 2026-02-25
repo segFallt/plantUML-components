@@ -1,4 +1,5 @@
-
+' lucid-style - Comprehensive skinparam and <style> layout definitions
+' Consumes color variables defined by a color scheme to style all diagram types
 
 !procedure $success($msg)
   <font color=$SUCCESS><b>$msg
@@ -92,7 +93,6 @@
 	arrow {
 		FontColor $PRIMARY_TEXT
 		LineColor $ARROW
-		LineColor $PRIMARY_DARK
 	}
 	group {
 		BackGroundColor $LIGHT
@@ -176,6 +176,7 @@ skinparam legend {
 	FontColor $PRIMARY_TEXT
 }
 
+' Subsections use !startsub/!endsub for selective inclusion of styling blocks
 !startsub swimlane
 skinparam swimlane {
 	BorderColor $INFO
@@ -498,7 +499,9 @@ skinparam stack {
 }
 !endsub
 
-!if (%variable_exists("LEGACY"))
+' LEGACY mode: enables useBetaStyle and mindmap/WBS styling for older PlantUML versions.
+' Set !$LEGACY = "true" or env var LEGACY=true before including this file.
+!if (%variable_exists("$LEGACY"))
 !$LEGACY = "true"
 !endif
 

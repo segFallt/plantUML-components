@@ -1,3 +1,4 @@
+' ocean-blue-theme - Combines ocean-blue color scheme with lucid-style layout
 !if %variable_exists("$COMPONENTS_PUML")
     !include $COMPONENTS_PUML/style/colorScheme/ocean-blue.iuml
     !include $COMPONENTS_PUML/style/layout/lucid-style.iuml

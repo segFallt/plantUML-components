@@ -1,6 +1,4 @@
-''
-'' Colors taken from the css file of the BS theme
-''
+' black-white - Clean monochrome palette with transparent backgrounds
 !$PRIMARY = "#Black"
 !$SECONDARY = "#White"
 !$LIGHT = "#F8F9FA"
@@ -44,5 +42,4 @@
 !$PARTICIPANT_BACKGROUND = $SECONDARY
 
 
-' skinparam backgroundColor $BACKGROUND
 skinparam useBetaStyle false

@@ -172,18 +172,22 @@ Provides invisible spacer elements for controlling diagram layout.
 
 ### Procedures
 
-#### `Spacer($alias, $count)`
+#### `$spacer($alias, $count)`
 
 Creates an invisible rectangle containing `$count` nested invisible rectangles for spacing.
 
-#### `SpacerLink($spacer, $obj1, $obj2)`
+#### `$spacerLink($spacer, $obj1, $obj2)`
 
 Creates hidden links from `$obj1` through `$spacer` to `$obj2`.
 
-#### `SpacerAndLink($alias, $count, $obj1, $obj2)`
+#### `$spacerAndLink($alias, $count, $obj1, $obj2)`
 
-Combines `Spacer` and `SpacerLink` in one call.
+Combines `$spacer` and `$spacerLink` in one call.
 
 ```plantuml
-SpacerAndLink(mySpacer, 3, ComponentA, ComponentB)
+$spacerAndLink(mySpacer, 3, ComponentA, ComponentB)
 ```
+
+### Deprecated Aliases
+
+The PascalCase names `Spacer()`, `SpacerLink()`, `SpacerAndLink()`, `SetLayout()` still work as aliases but are deprecated.
